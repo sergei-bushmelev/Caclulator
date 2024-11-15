@@ -15,19 +15,32 @@ public class CalculatorService {
         }
     }
 
-    public int calculateSum(int num1, int num2) {
-        return num1 + num2;
+    public void calculateSum(int num1, int num2) {
+        noNull(num1, num2);
+        int sum = num1 + num2;
+        System.out.println(num1 + "+" + num2 + sum);
     }
 
-    public int calculateSubstraction(int num1, int num2) {
-        return num1 - num2;
+    public void calculateSubstraction(int num1, int num2) {
+        noNull(num1, num2);
+        int substraction = num1 - num2;
+        System.out.println(num1 + "+" + num2 + substraction);
+
     }
 
-    public int calculateMultiplication(int num1, int num2) {
-        return num1 * num2;
+    public void calculateMultiplication(int num1, int num2) {
+        noNull(num1, num2);
+        int multiplication = num1 * num2;
+        System.out.println(num1 + "+" + num2 + multiplication);
     }
 
-    public int calculateDivision(int num1, int num2) {
-        return num1 / num2;
+    public void calculateDivision(int num1, int num2) {
+        noNull(num1, num2);
+        if (num2 == 0) {
+            System.out.println("Нельзя делить на 0");
+        } else {
+            int division = num1 / num2;
+            System.out.println(num1 + "+" + num2 + division);
+        }
     }
 }

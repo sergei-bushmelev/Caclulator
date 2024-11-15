@@ -21,33 +21,26 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String calculateSum(@RequestParam Integer num1,
+    public void calculateSum(@RequestParam Integer num1,
                                @RequestParam Integer num2) {
-        calculatorService.noNull(num1, num2);
-        return String.format(num1 + "+" + num2 + " = %s", calculatorService.calculateSum(num1, num2));
+        calculatorService.calculateSum(num1, num2);
     }
 
     @GetMapping(path = "/minus")
-    public String calculateSubstraction(@RequestParam("num1") Integer num1,
-                                        @RequestParam("num2") Integer num2) {
-        calculatorService.noNull(num1, num2);
-        return String.format(num1 + "-" + num2 + " = %s", calculatorService.calculateSubstraction(num1, num2));
+    public void calculateSubstraction(@RequestParam Integer num1,
+                                        @RequestParam Integer num2) {
+        calculatorService.calculateSubstraction(num1, num2);
     }
 
     @GetMapping(path = "/multiply")
-    public String calculateMultiplication(@RequestParam("num1") Integer num1,
-                                          @RequestParam("num2") Integer num2) {
-        calculatorService.noNull(num1, num2);
-        return String.format(num1 + "*" + num2 + " = %s", calculatorService.calculateMultiplication(num1, num2));
+    public void calculateMultiplication(@RequestParam Integer num1,
+                                          @RequestParam Integer num2) {
+        calculatorService.calculateMultiplication(num1, num2);
     }
 
     @GetMapping(path = "/divide")
-    public String calculateDivision(@RequestParam("num1") Integer num1,
-                                    @RequestParam("num2") Integer num2) {
-        calculatorService.noNull(num1, num2);
-        if (num2 == 0) {
-            return "Нельзя делить на 0";
+    public void calculateDivision(@RequestParam Integer num1,
+                                    @RequestParam Integer num2) {
+        calculatorService.calculateDivision(num1, num2);
         }
-        return String.format(num1 + "/" + num2 + " = %s", calculatorService.calculateDivision(num1, num2));
     }
-}
