@@ -9,6 +9,12 @@ public class CalculatorService {
         return "Добро пожаловать в калькулятор";
     }
 
+    public void noNull(Integer num1, Integer num2) {
+        if (num1 == null || num2 == null) {
+            System.out.println("Нет параметра");
+        }
+    }
+
     public int calculateSum(int num1, int num2) {
         return num1 + num2;
     }
