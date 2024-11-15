@@ -21,26 +21,26 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public void calculateSum(@RequestParam Integer num1,
+    public String calculateSum(@RequestParam Integer num1,
                                @RequestParam Integer num2) {
-        calculatorService.calculateSum(num1, num2);
+        return calculatorService.calculateSum(num1, num2);
     }
 
     @GetMapping(path = "/minus")
-    public void calculateSubstraction(@RequestParam Integer num1,
+    public String calculateSubstraction(@RequestParam Integer num1,
                                         @RequestParam Integer num2) {
-        calculatorService.calculateSubstraction(num1, num2);
+        return calculatorService.calculateSubstraction(num1, num2);
     }
 
     @GetMapping(path = "/multiply")
-    public void calculateMultiplication(@RequestParam Integer num1,
+    public String calculateMultiplication(@RequestParam Integer num1,
                                           @RequestParam Integer num2) {
-        calculatorService.calculateMultiplication(num1, num2);
+        return calculatorService.calculateMultiplication(num1, num2);
     }
 
     @GetMapping(path = "/divide")
-    public void calculateDivision(@RequestParam Integer num1,
+    public String calculateDivision(@RequestParam Integer num1,
                                     @RequestParam Integer num2) {
-        calculatorService.calculateDivision(num1, num2);
-        }
+        return calculatorService.calculateDivision(num1, num2);
     }
+}
